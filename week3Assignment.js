@@ -29,6 +29,17 @@ const every = (arr,callBack)=>{
             return acc;
         },true);
     }
-console.log(every([6,7,0],a=>{
-    return a%2===0;
+
+
+// some
+const some = (arr,callBack)=>{
+    return arr.reduce((acc,item)=>{
+        if(callBack(item)){
+            acc = true;
+        }
+        return acc;
+    },false);
+}
+console.log(some([4,8,0],a=>{
+    return a%2===1;
 }));
