@@ -19,6 +19,16 @@ const filter = (arr,callBack)=>{
 
 }
 
-console.log(filter([2,3,5],a=>{
-    return a%2===1;
+
+// every
+const every = (arr,callBack)=>{
+        return arr.reduce((acc,item)=>{
+            if(!callBack(item)){
+                acc = false;
+            }
+            return acc;
+        },true);
+    }
+console.log(every([6,7,0],a=>{
+    return a%2===0;
 }));
