@@ -8,7 +8,17 @@ const map = (arr,callBack)=>{
 }
 
 
+// filter
+const filter = (arr,callBack)=>{
+    return arr.reduce((acc,item)=>{
+      if(callBack(item)){
+          acc.push(item);
+      }
+      return acc;
+    },[])
 
-console.log(map([2,3,5],a=>{
-    return a*10;
+}
+
+console.log(filter([2,3,5],a=>{
+    return a%2===1;
 }));
